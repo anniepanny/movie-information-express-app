@@ -1,18 +1,26 @@
-import { Model, DataTypes } from "sequelize/types";
-import { Movie } from "./Movie";
-import { sequelize } from "../config/sequelize.js";
+import sequelize from "sequelize";
+const { DataTypes, Model } = sequelize;
+import { Movie } from "./Movie.js";
+import { sequelize as iSequelize } from "../config/sequelize.js";
 
 export class Genre extends Model {}
-Genre.init({
+Genre.init(
+  {
   id: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     unique: true,
     primaryKey: true,
     allowNull: false,
   },
-  type: DataTypes.STRING,
+  type:{
+    type: DataTypes.STRING,
+    unique: true,
+  }
 }, 
-{sequelize});
+{
+  sequelize: iSequelize
+}
+);
 Genre.belongsToMany(Movie, {
   foreignKey: {
     name: "movieId",
