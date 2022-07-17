@@ -13,6 +13,7 @@ if (!genre){
 return res.status(200).send(genre);
 };
 export const getAllGenres = async (req, res) => {
+    console.log("User from request: ", req.user);
     const genres = await Genre.findAll();
     res.status(200).send(genres);
 };

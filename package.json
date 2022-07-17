@@ -1,7 +1,7 @@
 {
   "name": "movie-info-express-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Teaching while learning",
   "main": "main.js",
   "scripts": {
     "start": "nodemon main.js"
@@ -15,10 +15,18 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "pg": "^8.7.3",
-    "sequelize": "^6.21.0",
+    "sequelize": "^6.21.3",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16"
-  }
+    "nodemon": "^2.0.19"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anniepanny/movie-information-express-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anniepanny/movie-information-express-app/issues"
+  },
+  "homepage": "https://github.com/anniepanny/movie-information-express-app#readme"
 }

@@ -21,10 +21,6 @@ Genre.init(
   sequelize: iSequelize
 }
 );
-Genre.belongsToMany(Movie, {
-  foreignKey: {
-    name: "movieId",
-    allowNull: false,
-  },
-  through: "GenreMovie"
-});
+
+Genre.belongsToMany(Movie, {through: "GenreMovie"});
+Movie.belongsToMany(Genre, {through: "GenreMovie"});

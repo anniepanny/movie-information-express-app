@@ -1,18 +1,23 @@
 import sequelize from "sequelize";
 const { DataTypes, Model } = sequelize;
 import { sequelize as iSequelize } from "../config/sequelize.js";
+
+
 export class Movie extends Model {}
 Movie.init(
   {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       unique: true,
       allowNull: false,
       primaryKey: true,
     },
     name: DataTypes.STRING,
-    releaseDate: DataTypes.DATE,
-    timeDuration: DataTypes.TIME,
+    releaseDate: DataTypes.STRING,
+    //timeDuration: DataTypes.TIME,
   },
-  { sequelize: iSequelize }
+  { 
+    sequelize: iSequelize,
+  }
 );
+

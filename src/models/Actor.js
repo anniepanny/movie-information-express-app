@@ -19,10 +19,6 @@ Actor.init(
     sequelize: iSequelize,
   }
 );
-Actor.belongsToMany(Movie, {
-  foreignKey: {
-    name: "movieId",
-    allowNull: false,
-  },
-  through: "ActorMovie",
-});
+
+Actor.belongsToMany(Movie, {through: "ActorMovie"});
+Movie.belongsToMany(Actor, {through: "ActorMovie"});

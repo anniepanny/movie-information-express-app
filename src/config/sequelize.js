@@ -19,6 +19,6 @@ async function init() {
     .authenticate()
     .then(() => console.log(" ==== sequelize connected ==="))
     .catch((err) => console.log("ERROR", err));
-  await sequelize.sync({ force: process.env.NODE_ENV === "development" });
+  await sequelize.sync({ force: false });
 }
 init();

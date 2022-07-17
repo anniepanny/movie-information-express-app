@@ -1,4 +1,5 @@
 import { Router } from "express";
+
 import {
   createGenre,
   deleteGenreById,
@@ -6,8 +7,10 @@ import {
   getGenreById,
   updateGenreById,
 } from "../controllers/genre.controller.js";
+
+
 export const router = Router();
-router.get("/genres", getAllGenres);
+router.get("/genres",getAllGenres);
 router.get("/genres/:id", getGenreById);
 router.post("/genres", createGenre);
 router.put("/genres/:id", updateGenreById);
